@@ -79,6 +79,9 @@ const LiveInterviewRoom = () => {
     if (currentQuestion < totalQuestions) {
       setCurrentQuestion(prev => prev + 1);
       setTextAnswer('');
+    } else {
+      // Navigate to report when interview is complete
+      navigate('/report');
     }
   };
 
