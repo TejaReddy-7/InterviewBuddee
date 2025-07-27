@@ -11,6 +11,7 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import LiveInterviewRoom from './components/LiveInterviewRoom';
 import CandidateOnboarding from './components/CandidateOnboarding';
+import PostInterviewReport from './components/PostInterviewReport';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         } />
         <Route path="/interview" element={<LiveInterviewRoom />} />
         <Route path="/onboarding" element={<CandidateOnboarding />} />
+        <Route path="/report" element={<PostInterviewReport />} />
       </Routes>
     </Router>
   );
