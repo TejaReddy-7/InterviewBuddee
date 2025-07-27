@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TrendingUp, Users, Clock, Star } from 'lucide-react';
 
 const Dashboard = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
@@ -116,6 +118,16 @@ const Dashboard = () => {
           <div className={`absolute -bottom-4 -left-4 w-6 h-6 bg-blue-400 rounded-full transition-all duration-300 ${
             isHovered ? 'animate-ping' : 'animate-pulse'
           }`}></div>
+        </div>
+
+        {/* CTA Button to Live Interview */}
+        <div className="text-center mt-12">
+          <button 
+            onClick={() => navigate('/interview')}
+            className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Launch Live Interview Room
+          </button>
         </div>
       </div>
     </section>

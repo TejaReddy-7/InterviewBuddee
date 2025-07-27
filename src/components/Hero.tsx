@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Play, Sparkles, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
       {/* Animated background particles */}
@@ -32,7 +35,10 @@ const Hero = () => {
 
             {/* CTA Group */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
+              <button 
+                onClick={() => navigate('/onboarding')}
+                className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Start Interview Free
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -40,9 +46,12 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
               </button>
               
-              <button className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full hover:border-white/40 hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
+              <button 
+                onClick={() => navigate('/interview')}
+                className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full hover:border-white/40 hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
+              >
                 <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Watch Live Demo
+                Live Interview Demo
               </button>
             </div>
 

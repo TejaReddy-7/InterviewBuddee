@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X, Play, Zap } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,10 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="group relative px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-semibold rounded-full shadow-lg hover:scale-105 transition-all duration-300 border-2 border-yellow-400 hover:shadow-yellow-400/50">
+            <button 
+              onClick={() => navigate('/interview')}
+              className="group relative px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-semibold rounded-full shadow-lg hover:scale-105 transition-all duration-300 border-2 border-yellow-400 hover:shadow-yellow-400/50"
+            >
               <span className="relative z-10">Launch Interview Studio</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
             </button>
@@ -76,7 +81,10 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-semibold rounded-full">
+              <button 
+                onClick={() => navigate('/interview')}
+                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-semibold rounded-full"
+              >
                 Launch Interview Studio
               </button>
             </div>
